@@ -5,4 +5,4 @@ from .models import Score
 # Create your views here.
 class ScoreList(generic.ListView):
     queryset = Score.objects.all()
-    template_name='score_list.html'
+    template_name='index.html'

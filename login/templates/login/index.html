@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<h1>Scores list</h1>
+{% for score in score_list %}
+<h2>{{score.name}}</h2>
+<p>{{score.score_value}}</p>
+<p>Author: {{score.user}}</p>
+{% endfor %}
+
+{% endblock content %}
