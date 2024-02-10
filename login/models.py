@@ -12,3 +12,10 @@ class Score(models.Model):
         score_value = models.IntegerField()
 
 
+        class Meta:
+            ordering = [
+                    'id'
+            ]
+
+        def __str__(self):
+              return f"{self.name}'s score | {self.score_value} | by {self.user}"
