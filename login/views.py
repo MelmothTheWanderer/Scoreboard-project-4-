@@ -1,5 +1,7 @@
 from django.shortcuts import render
-from django.http import HttpResponse
+from django.views import generic
+from .models import Score
+
 # Create your views here.
-def login_index(request):
-    return HttpResponse('This will be the login page')
+class ScoreList(generic.ListView):
+    model = Score
