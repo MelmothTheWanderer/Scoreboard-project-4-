@@ -3,7 +3,12 @@
 {% block content %}
 
 <div class="container" id="main">
-
+    {% if user.is_authenticated %}
+    <div class="row justify-content-center bg-success" id="login-row">
+        <h2>{{user}}'s scores</h2>
+    </div>
+    {% else %}
+    {% endif %}
 </div>
 
 {% endblock content %}
