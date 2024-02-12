@@ -1,4 +1,12 @@
 body {
     background-color: orange;
-    height: 100vh;
+    min-height: 100vh;
+    position:relative;
+}
+
+#footer {
+    position:absolute;
+    bottom:0;
+    left:0;
+    width:100%;
 }
