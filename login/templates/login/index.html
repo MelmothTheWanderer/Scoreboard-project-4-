@@ -2,11 +2,16 @@
 
 {% block content %}
 
-<h1>Scores list</h1>
-{% for score in score_list %}
-<h2>{{score.name}}</h2>
-<p>{{score.score_value}}</p>
-<p>Author: {{score.user}}</p>
-{% endfor %}
+<div class="container login-box">
+    <div id="login-name" class="row">
+        <!-- Put the contents of the login prompt here -->
+        {% if user.is_authenticated %}
+        <h1> {{user}}'s scores </h1>
+        {% else %}
+        <h1>Please log in to use the scoreboard</h1>
+        {% endif %}
+    </div>
+</div>
+
 
 {% endblock content %}

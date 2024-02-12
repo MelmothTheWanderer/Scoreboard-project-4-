@@ -19,3 +19,26 @@ background: linear-gradient(0deg, rgba(34,106,195,1) 0%, rgba(131,45,253,1) 100%
     justify-content: space-evenly;
     list-style: none;
 }
+
+.content-container {
+    display:flex;
+    width: 100%;
+    min-height: 100vh;
+    justify-content: center;
+    align-items: center;
+}
+
+.login-box {
+    height:75vh;
+    background-color:white;
+    border:10px solid black;
+    border-radius:5%;
+}
+
+#login-name {
+    text-align: center;
+    background-color: blue;
+    display: flex;
+    justify-content: center;
+    color:white;
+}
