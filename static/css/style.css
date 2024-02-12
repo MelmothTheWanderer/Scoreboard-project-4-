@@ -3,7 +3,7 @@ body {
     min-height: 100vh;
     position:relative;
     background: rgb(34,106,195);
-background: linear-gradient(0deg, rgba(34,106,195,1) 0%, rgba(131,45,253,1) 100%);
+    background: linear-gradient(0deg, rgba(34,106,195,1) 0%, rgba(131,45,253,1) 100%);
 }
 
 #footer {
@@ -28,17 +28,11 @@ background: linear-gradient(0deg, rgba(34,106,195,1) 0%, rgba(131,45,253,1) 100%
     align-items: center;
 }
 
-.login-box {
-    height:75vh;
-    background-color:white;
-    border:10px solid black;
-    border-radius:5%;
-}
 
-#login-name {
-    text-align: center;
-    background-color: blue;
-    display: flex;
-    justify-content: center;
-    color:white;
+#main {
+    background-color: white;
+    border-radius:5%;
+    min-height:75vh;
+    margin:20px;
+    border:2px solid black;
 }
