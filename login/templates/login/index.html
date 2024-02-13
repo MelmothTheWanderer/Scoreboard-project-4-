@@ -10,42 +10,44 @@
     </div>
 
     <!--Form for adding a new entry -->
+    <form method="post" action="{% url 'score' %}">
+        <div class=" row full-border ">
+            <div class="col-3">
+                <div class="container">
+                    <div class="row bg-success text-center">
+                        <div class="col text-center py-2">
+                            Name:
+                        </div>
     
-    <div class=" row full-border ">
-        <div class="col-3">
-            <div class="container">
-                <div class="row bg-success text-center">
-                    <div class="col text-center py-2">
-                        Name:
                     </div>
-
-                </div>
-
-                <div class="row bg-success text-center py-2">
-                    <div class="col text-center">
-                        Score:
+    
+                    <div class="row bg-success text-center py-2">
+                        <div class="col text-center">
+                            Score:
+                        </div>
+    
                     </div>
-
+    
                 </div>
-
             </div>
-        </div>
-        <div class="col">
-            <div class=" bg-primary d-flex flex-column align-items-center ">
-                {% for field in form %}
-                <div class="py-1">{{field}}</div>
-                {% endfor %}
+            <div class="col">
+                <div class=" bg-primary d-flex flex-column align-items-center ">
+                    {% for field in form %}
+                    <div class="py-1">{{field}}</div>
+                    {% endfor %}
+                </div>
             </div>
-        </div>
-
-        <div class="col">
-            <div class=" bg-warning py-2 d-flex justify-content-center align-items-center h-100">
-                <button>save</button>
+    
+            <div class="col">
+                <div class=" bg-warning py-2 d-flex justify-content-center align-items-center h-100">
+                    <button>save</button>
+                </div>
+                
             </div>
-            
+    
         </div>
+    </form>
 
-    </div>
 
     
         
