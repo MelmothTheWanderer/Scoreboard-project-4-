@@ -16,7 +16,7 @@
         
     </row>
     <!--Scores and shit go here -->
-    {% for score in score_list %}
+    {% for score in scores %}
     <div class="row ">
 
         <!--NAME-->
@@ -43,6 +43,12 @@
     </div>
     {% endfor %}
     {% else %}
+    <button>
+        login
+    </button>
+    <button>
+        register
+    </button>
     {% endif %}
 </div>
 
