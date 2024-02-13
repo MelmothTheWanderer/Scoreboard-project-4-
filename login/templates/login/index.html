@@ -11,17 +11,21 @@
     {% for score in score_list %}
     <div class="row ">
 
-        <div class="col-2 text-center bg-info half-border">
-            {{score.score_value}}
-        </div>
+        <!--NAME-->
         <div class="col-6 bg-success text-center half-border">
             {{score.name}}
         </div>
+        <!--SCORE-->
+        <div class="col-2 text-center bg-info half-border">
+            {{score.score_value}}
+        </div>
+        <!--EDIT-->
         <div class="col-2 text-center bg-primary half-border">
             <button>
                 edit
             </button>
         </div>
+        <!--DELETE-->
         <div class="col-2 text-center bg-warning half-border">
             <button>
                 delete
