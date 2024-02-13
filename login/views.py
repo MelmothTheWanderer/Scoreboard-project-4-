@@ -11,8 +11,11 @@ class ScoreList(generic.ListView):
     def get(self, request):
         if request.user.is_authenticated:
             scores = Score.objects.filter(user=request.user)
+            form = ScoreForm()
+            
             return render(request, 'login/index.html', {
-                'scores': scores
+                'scores': scores,
+                'form' : form,
             }
             )
         else:
