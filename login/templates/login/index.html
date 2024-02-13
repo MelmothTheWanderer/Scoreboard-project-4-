@@ -2,7 +2,7 @@
 
 {% block content %}
 
-<div class="container d-flex flex-column" id="main">
+<div class="container" id="main">
 
     {% if user.is_authenticated %}
     <div class="row justify-content-center bg-danger" id="login-row">
@@ -30,7 +30,7 @@
 
             </div>
         </div>
-        <div class="col">
+        <div class="col-6">
             <div class=" bg-primary d-flex flex-column align-items-start ">
                 {% for field in form %}
                 <div>{{field}}</div>
@@ -39,7 +39,7 @@
         </div>
 
         <div class="col">
-            <div class=" bg-warning d-flex justify-content-center align-items-center h-100">
+            <div class=" bg-warning py-2 d-flex justify-content-center align-items-center h-100">
                 <button>save</button>
             </div>
             
