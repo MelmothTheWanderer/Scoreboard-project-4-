@@ -11,15 +11,40 @@
 
     <!--Form for adding a new entry -->
     
-    <div class=" row full-border text-center">
-        <form >
-            <div class="col">{{form}}</div>
-        </form>
+    <div class=" row full-border ">
+        <div class="col-3">
+            <div class="container">
+                <div class="row bg-success text-center">
+                    <div class="col text-center pb-2">
+                        Name:
+                    </div>
 
-    
-        <div class="col"><button>save</button></div>
+                </div>
 
-        
+                <div class="row bg-success text-center">
+                    <div class="col text-center">
+                        Score:
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+        <div class="col">
+            <div class=" bg-primary d-flex flex-column align-items-start ">
+                {% for field in form %}
+                <div>{{field}}</div>
+                {% endfor %}
+            </div>
+        </div>
+
+        <div class="col">
+            <div class=" bg-warning d-flex justify-content-center align-items-center h-100">
+                <button>save</button>
+            </div>
+            
+        </div>
+
     </div>
 
     
