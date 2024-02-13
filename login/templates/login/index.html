@@ -4,9 +4,32 @@
 
 <div class="container" id="main">
     {% if user.is_authenticated %}
-    <div class="row justify-content-center bg-success" id="login-row">
+    <div class="row justify-content-center bg-danger" id="login-row">
         <h2>{{user}}'s scores</h2>
     </div>
+    <!--Scores and shit go here -->
+    {% for score in score_list %}
+    <div class="row ">
+
+        <div class="col-2 text-center bg-info half-border">
+            {{score.score_value}}
+        </div>
+        <div class="col-6 bg-success text-center half-border">
+            {{score.name}}
+        </div>
+        <div class="col-2 text-center bg-primary half-border">
+            <button>
+                edit
+            </button>
+        </div>
+        <div class="col-2 text-center bg-warning half-border">
+            <button>
+                delete
+            </button>
+        </div>
+
+    </div>
+    {% endfor %}
     {% else %}
     {% endif %}
 </div>
