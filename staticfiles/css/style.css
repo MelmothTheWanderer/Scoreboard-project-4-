@@ -1,4 +1,54 @@
 body {
     background-color: orange;
-    height: 100vh;
+    min-height: 100vh;
+    position:relative;
+    background: rgb(34,106,195);
+    background: linear-gradient(0deg, rgba(34,106,195,1) 0%, rgba(131,45,253,1) 100%);
+}
+
+#footer {
+    position:absolute;
+    bottom:0;
+    left:0;
+    width:100%;
+}
+
+
+#footer-links {
+    display:flex;
+    justify-content: space-evenly;
+    list-style: none;
+}
+
+.content-container {
+    display:flex;
+    width: 100%;
+    min-height: 100vh;
+    justify-content: center;
+    align-items: center;
+}
+
+
+#main {
+    background-color: white;
+    border-radius:10px;
+    min-height:75vh;
+    margin:20px 20px 70px 20px;
+    border:2px solid black;
+}
+
+#login-row {
+   border-bottom: 2px solid black;
+}
+
+.half-border {
+    border-right: 2px solid black;
+    border-bottom: 2px solid black;
+    padding:5px;
+}
+
+.full-border {
+    border: 2px solid black;
+    padding:5px;
+    margin:5px;
 }
