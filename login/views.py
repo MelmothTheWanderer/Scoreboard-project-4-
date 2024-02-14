@@ -1,4 +1,4 @@
-from django.shortcuts import render, redirect
+from django.shortcuts import render, redirect, get_object_or_404
 from django.urls import reverse
 from django.views import generic
 from .models import Score
@@ -23,12 +23,13 @@ class ScoreList(generic.ListView):
         else:
             return redirect('account_login')
         
-def add_score(request):
-    if request.method == 'POST':
-        score_form = ScoreForm(data=request.POST)
+def alter_score(request):
+    if 'save' in request.POST:
+        score_form = ScoreForm(data=request.POST, )
 
         if score_form.is_valid():
             score = score_form.save(commit=False)
             score.user = request.user
             score.save()
     return HttpResponseRedirect(reverse('score'))
+

@@ -10,7 +10,7 @@
     </div>
 
     <!--Form for adding a new entry -->
-    <form method="post" action="{% url 'add' %}">
+    <form method="post" action="{% url 'alter' %}">
     {% csrf_token %}
         <div class=" row full-border ">
             <div class="col-3">
@@ -41,7 +41,7 @@
     
             <div class="col">
                 <div class=" bg-warning py-2 d-flex justify-content-center align-items-center h-100">
-                    <button>save</button>
+                    <button name="save">save</button>
                 </div>
                 
             </div>
@@ -75,13 +75,13 @@
         </div>
         <!--EDIT-->
         <div class="col-2 text-center bg-primary half-border">
-            <button name="edit">
+            <button name="edit" value="{{score.id}}">
                 edit
             </button>
         </div>
         <!--DELETE-->
         <div class="col-2 text-center bg-warning half-border">
-            <button name="delete">
+            <button name="delete" value="{{score.id}}">
                 delete
             </button>
         </div>
