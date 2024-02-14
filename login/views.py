@@ -6,34 +6,33 @@ from login.forms import ScoreForm
 from django.http import HttpResponseRedirect
 
 # Create your views here.
-class ScoreList(generic.ListView):
-    queryset = Score.objects.all()
-    template_name='login/index.html'
+def index (request): 
+    if request.user.is_authenticated:
 
-    def get(self, request):
-        if request.user.is_authenticated:
-            scores = Score.objects.filter(user=request.user)
-            form = ScoreForm()
-            
-            return render(request, 'login/index.html', {
-                'scores': scores,
-                'form' : form,
-            }
-            )
-        else:
-            return redirect('account_login')
+        context = {}
+        form = ScoreForm()
+        scores = Score.objects.filter(user=request.user)
+        context ['scores'] = scores
+        context ['title'] = 'Home'
+
+        if request.method == 'POST':
+            if 'save' in request.POST:
+                form= ScoreForm(request.POST)
+                if form.is_valid():
+                    score = form.save(commit=False)
+                    score.user = request.user
+                    score.save()
+            elif 'delete' in request.POST:
+                pk = request.POST.get('delete')
+                score = Score.objects.get(id=pk)
+                score.delete()
+            elif 'edit' in request.POST:
+                pk = request.POST.get('edit')
+                score = Score.objects.get(id=pk)
+                form = ScoreForm(instance=score)
+        context['form'] = form 
         
-def alter_score(request):
-    if 'save' in request.POST:
-        score_form = ScoreForm(data=request.POST, )
-
-        if score_form.is_valid():
-            score = score_form.save(commit=False)
-            score.user = request.user
-            score.save()
-    elif 'delete' in request.POST:
-        pk = request.POST.get('delete')
-        score = Score.objects.get(id=pk)
-        score.delete()
-    return HttpResponseRedirect(reverse('score'))
+        return render(request, 'login/index.html', context ) 
+    else:
+        return redirect('account_login')
 
