@@ -22,6 +22,7 @@ def index (request):
                     score = form.save(commit=False)
                     score.user = request.user
                     score.save()
+                return redirect('index')
             elif 'delete' in request.POST:
                 pk = request.POST.get('delete')
                 score = Score.objects.get(id=pk)
