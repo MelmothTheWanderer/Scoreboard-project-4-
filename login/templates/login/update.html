@@ -1,5 +1,10 @@
 {% extends 'base.html' %}
-<form action='#'>
+{% block content %}
+
+<form method="post" action="{% url 'update' %}">
+{% csrf_token %}
     {{form}}
-    <button type="submit">Save</button>
+    <button value="{{pk}}" name="update">Save changes</button>
 </form>
+
+{% endblock %}

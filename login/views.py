@@ -28,12 +28,34 @@ def index (request):
                 score = Score.objects.get(id=pk)
                 score.delete()
             elif 'edit' in request.POST:
+                '''Somehow , I need to pass this to 
+                another view and template that will handle it
+                '''
                 pk = request.POST.get('edit')
                 score = Score.objects.get(id=pk)
                 form = ScoreForm(instance=score)
+                #trying this 
+                # context['form'] = form
+                # context['pk'] = pk
+                return render(request, 'login/update.html', { 'pk': pk , 'form' : form})
         context['form'] = form 
         
         return render(request, 'login/index.html', context ) 
     else:
         return redirect('account_login')
+    
+
+def update(request):
+
+    if request.method == 'POST':
+        pk = request.POST.get('update')
+        score = Score.objects.get(id=pk)
+        form = ScoreForm(request.POST, instance=score)
+        if form.is_valid():
+            d = form.save(commit=False)
+            d.user = request.user
+            d.save()
+            return redirect('index')
+        
+
 
