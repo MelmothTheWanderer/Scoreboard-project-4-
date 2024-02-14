@@ -31,5 +31,9 @@ def alter_score(request):
             score = score_form.save(commit=False)
             score.user = request.user
             score.save()
+    elif 'delete' in request.POST:
+        pk = request.POST.get('delete')
+        score = Score.objects.get(id=pk)
+        score.delete()
     return HttpResponseRedirect(reverse('score'))
 

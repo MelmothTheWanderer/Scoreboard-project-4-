@@ -47,47 +47,44 @@
             </div>
     
         </div>
-    </form>
 
-
-    
-        
-    <!--HEADERS FOR THE ROWS-->
-    <div class=" row text-center">
-        <div class="col-6 half-border"><b>Name</b></div>
-        <div class="col-2 half-border"><b>Score</b></div>
-        <div class="col-2 half-border"><b>Edit</b></div>
-        <div class="col-2 half-border"><b>Delete</b></div>
-        
-    </div>
-
-    <!--Scores and shit go here -->
-    {% for score in scores %}
-    <div class="row ">
-
-        <!--NAME-->
-        <div class="col-6 bg-success text-center half-border">
-            {{score.name}}
-        </div>
-        <!--SCORE-->
-        <div class="col-2 text-center bg-info half-border">
-            {{score.score_value}}
-        </div>
-        <!--EDIT-->
-        <div class="col-2 text-center bg-primary half-border">
-            <button name="edit" value="{{score.id}}">
-                edit
-            </button>
-        </div>
-        <!--DELETE-->
-        <div class="col-2 text-center bg-warning half-border">
-            <button name="delete" value="{{score.id}}">
-                delete
-            </button>
+        <!--HEADERS FOR THE ROWS-->
+        <div class=" row text-center">
+            <div class="col-6 half-border"><b>Name</b></div>
+            <div class="col-2 half-border"><b>Score</b></div>
+            <div class="col-2 half-border"><b>Edit</b></div>
+            <div class="col-2 half-border"><b>Delete</b></div>
+            
         </div>
 
-    </div>
+        <!--Scores and shit go here -->
+        {% for score in scores %}
+        <div class="row ">
+
+            <!--NAME-->
+            <div class="col-6 bg-success text-center half-border">
+                {{score.name}}
+            </div>
+            <!--SCORE-->
+            <div class="col-2 text-center bg-info half-border">
+                {{score.score_value}}
+            </div>
+            <!--EDIT-->
+            <div class="col-2 text-center bg-primary half-border">
+                <button formnovalidate name="edit" value="{{score.id}}">
+                    edit
+                </button>
+            </div>
+            <!--DELETE-->
+            <div class="col-2 text-center bg-warning half-border">
+                <button formnovalidate name="delete" value="{{score.id}}">
+                    delete
+                </button>
+            </div>
+
+        </div>
     {% endfor %}
+    </form>
     {% else %}
     <button>
         login
