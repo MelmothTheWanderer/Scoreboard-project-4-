@@ -47,9 +47,10 @@ body {
     padding:5px;
 }
 
-.full-border {
-    border: 2px solid black;
-    padding:5px;
+#score-window {
+
+    padding:2px;
+    border-bottom: 2px solid black;
 }
 
 .bottom-border {
