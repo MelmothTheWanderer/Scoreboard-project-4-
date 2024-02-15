@@ -30,11 +30,12 @@ body {
 
 
 #main {
-    background-color: white;
+    background-color: #FAF9F6;
     border-radius:10px;
     min-height:75vh;
-    margin:20px 20px 70px 20px;
+    margin:10px 10px 10px 10px;
     border:2px solid black;
+
 }
 
 #login-row {
