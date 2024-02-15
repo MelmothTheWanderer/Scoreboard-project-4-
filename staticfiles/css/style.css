@@ -1,5 +1,5 @@
 body {
-    background-color: orange;
+    font-family: "Noto Sans Mono", monospace;
     min-height: 100vh;
     position:relative;
     background: rgb(34,106,195);
