@@ -7,13 +7,13 @@
 
 {% block content %}
 
-<div class="container">
+<div class="container" style="background-color: #D3D3D3; border-radius: 10px; margin:10px; border:2px solid black ">
     <div class="row">
         <div class="col-md-8 mt-3 offset-md-2">
-            <h3>{% trans "Sign In" %}</h3>
+            <h3 style="font-size:40px" class="font-pixel">{% trans "Sign In" %}</h3>
 
-            <p>{% blocktrans %}Welcome to the scoreboard. To leave manage your scores , please sign in . If
-                you
+            <p>{% blocktrans %}Welcome to my project-4 scoreboard Django web application. <br>
+                To manage your scores , please sign in .<br> If you
                 have not created an account yet, then <a class="link" href="{{ signup_url }}">sign up</a>
                 first.{% endblocktrans %}</p>
         </div>
@@ -26,7 +26,7 @@
                 {% if redirect_field_value %}
                 <input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}" />
                 {% endif %}
-                <button class="btn btn-signup right" type="submit">{% trans "Sign In" %}</button>
+                <button style="margin-bottom: 10px;" type="submit">{% trans "Sign In" %}</button>
             </form>
         </div>
     </div>
