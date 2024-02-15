@@ -62,3 +62,7 @@ body {
     height: 50px;
     width: 50px;
 }
+
+.font-pixel {
+    font-family: "Pixelify Sans", sans-serif;
+}

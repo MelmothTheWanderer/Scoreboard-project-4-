@@ -13,7 +13,7 @@ def index (request):
         form = ScoreForm()
         scores = Score.objects.filter(user=request.user)
         context ['scores'] = scores
-        context ['title'] = 'Home'
+        context ['title'] = str(request.user).title()
 
         if request.method == 'POST':
             if 'save' in request.POST:
