@@ -39,7 +39,11 @@ body {
 }
 
 #login-row {
-   border-bottom: 2px solid black;
+    border-bottom: 2px solid black;
+    background-color: rgba(34,106,195,1);
+    color: #FAF9F6;
+    text
+    padding-top:5px;
 }
 
 .half-border {
@@ -52,6 +56,7 @@ body {
 
     padding:2px;
     border-bottom: 2px solid black;
+    background-color: #D3D3D3;
 }
 
 .bottom-border {
@@ -66,4 +71,9 @@ body {
 
 .font-pixel {
     font-family: "Pixelify Sans", sans-serif;
+}
+
+#row-headers {
+    text-align: center;
+    font-size: 1px;
 }
