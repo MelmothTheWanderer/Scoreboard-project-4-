@@ -1,9 +1,10 @@
 {% extends 'base.html' %}
+{% load crispy_forms_tags %}
 {% block content %}
 
-<form method="post" action="{% url 'update' %}">
+<form id="update-form" method="post" action="{% url 'update' %}">
 {% csrf_token %}
-    {{form}}
+    {{form|crispy}}
     <button value="{{pk}}" name="update">Save changes</button>
 </form>
 
