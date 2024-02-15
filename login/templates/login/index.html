@@ -15,14 +15,14 @@
         <div id="score-window" class=" row">
             <div class="col-3">
                 <div class="container">
-                    <div class="row bg-success text-center">
+                    <div class="row text-center">
                         <div class="col text-center py-2">
                             Name:
                         </div>
     
                     </div>
     
-                    <div class="row bg-success text-center py-2">
+                    <div class="row text-center py-2">
                         <div class="col text-center">
                             Score:
                         </div>
@@ -32,7 +32,7 @@
                 </div>
             </div>
             <div class="col">
-                <div class=" bg-primary d-flex flex-column align-items-center ">
+                <div class="d-flex flex-column align-items-center ">
                     {% for field in form %}
                     <div class="py-1">{{field}}</div>
                     {% endfor %}
@@ -40,7 +40,7 @@
             </div>
     
             <div class="col">
-                <div class=" bg-warning py-2 d-flex justify-content-center align-items-center h-100">
+                <div class="  py-2 d-flex justify-content-center align-items-center h-100">
                     <button id="save-button" name="save"><i class="fa-solid fa-floppy-disk fa-2xl" style="color: #63E6BE;"></i></button>
                 </div>
                 
@@ -62,21 +62,21 @@
         <div class="row ">
 
             <!--NAME-->
-            <div class="col-6 bg-success text-center half-border">
+            <div class="col-6 text-center half-border">
                 {{score.name}}
             </div>
             <!--SCORE-->
-            <div class="col-2 text-center bg-info half-border">
+            <div class="col-2 text-center half-border">
                 {{score.score_value}}
             </div>
             <!--EDIT-->
-            <div class="col-2 text-center bg-primary half-border">
+            <div class="col-2 text-center half-border">
                 <button formnovalidate name="edit" value="{{score.id}}">
                     <i class="fa-solid fa-pen-to-square fa-2xs" style="color: #1753de;"></i>
                 </button>
             </div>
             <!--DELETE-->
-            <div class="col-2 text-center bg-warning bottom-border">
+            <div class="col-2 text-center bottom-border">
                 <button formnovalidate name="delete" value="{{score.id}}">
                     <i class="fa-solid fa-trash fa-2xs" style="color: #ff0000;"></i>
                 </button>
