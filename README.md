@@ -175,6 +175,66 @@ After that, there was a lot of trouble, but eventually I found a solution by add
 
 I was very relieved when it worked!
 
+---
+
+## Deployment
+
+Here are the steps required to deploy, but if you prefer the quick version , here is a [template](https://codeinstitute.s3.amazonaws.com/fst/Django%20Blog%20Cheat%20Sheet%20v1.pdf) from the Code Institute.
+
+Now for the steps : 
+
+### How to clone the repository: 
+
+- Visit the repo [here](https://github.com/MelmothTheWanderer/Scoreboard-project-4-)
+
+- On the top right of the screen, you should see a 'code' button, click 'HTTPS' and copy the link. 
+
+- On your IDE , navigate to the directory that you would like to clone the project to. 
+
+- In your terminal , type 'git clone' and paste the url that you copied. 
+
+- If you want to go ahead and install all of the necessary packages, that can be done easily with the 'pip3 install -r requirements.txt' command. 
+
+---
+
+### How to deploy to Heroku
+
+Here are the steps to deply to the Heroku hosting service: 
+
+- Create an account on the [Heroku](https://www.heroku.com) website, or sign in if you already have one. 
+
+- On the dashboard , you should see a "create new app" button. Click on it. 
+
+- Enter name for your app. It needs to be unique, you might have to try a couple of times. 
+
+- You might need to select a region. Just select whichever suits best. 
+
+- Go to the settings tab of your app. Click on the button that says 'reveal config vars'
+
+- Add a variable in all caps named 'DISABLE_COLLECTSTATIC' and set its value to ' 1 '. 
+
+- Add another variable in all caps called 'SECRET_KEY' and assign it a value, anything you like, the more complicated the better though, I think. 
+
+- If you go into your Django project now for a moment, the settings.py file ought to have the following variables set to : 
+
+    - DATABASES = {'default': dj_database_url.parse(os.environ.get('DATABASE_URL'))}
+
+    - SECRET_KEY = os.environ.get('SECRET_KEY')
+
+    - DEBUG = False
+
+- In your IDE, take to the terminal window and initialise the data model in the postgres database with the following command 'python3 manage.py migrate' 
+
+- After doing this follow up by keeping your requirements up to date with this command : 
+    - 'pip3 freeze --local > requirements.txt' 
+
+-Commit and push changes to your Github repo
+
+-Make sure you add the values mentioned earlier , SECRET_KEY and DATABASE_URL to to your env.py file. 
+
+
+
+
 
 
 
